@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Mono", monospace;
+}
+
+:root {
+  --color-neutral: linear-gradient(
+      to right bottom,
+      rgb(8, 146, 208, 0.93),
+      rgb(8, 146, 208, 0.93),
+      rgb(8, 146, 208, 0.93)
+    ),
+    url(bg.jpg);
+
+  --color-correct: linear-gradient(
+      to right bottom,
+      rgb(247, 247, 131, 0.93),
+      rgb(108, 231, 139, 0.93),
+      rgb(136, 202, 247, 0.93)
+    ),
+    url(bg.jpg);
+
+  --color-wrong: linear-gradient(
+      to right bottom,
+      rgba(224, 60, 60, 0.93),
+      rgba(252, 79, 79, 0.93),
+      rgba(189, 82, 96, 0.93)
+    ),
+    url(bg.jpg);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  background-image: var(--color-neutral);
+  background-size: cover;
+}
+
+body.correct {
+  background-image: var(--color-correct);
+  background-size: cover;
+}
+
+body.wrong {
+  background-image: var(--color-wrong);
+  background-size: cover;
+}
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 10px;
+  margin: 20px 0;
+}
+
+.btn {
+  background-color: #6fb7d8;
+  border: 1px solid #2488b6;
+  border-radius: 5px;
+  padding: 5px 10px;
+  outline: none;
+  color: whitesmoke;
+}
+
+.btn:hover {
+  border-color: #144c66;
+}
+
+.btn.correct {
+  background-color: #6ce78b;
+  color: #2488b6;
+}
+
+.btn.wrong {
+  background-color: #e03c3c;
+}
+
+.start-btn,
+.next-btn {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
